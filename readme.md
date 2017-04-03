@@ -9,5 +9,7 @@
 	- LINE\_CHANNEL\_SECRET = Your Channel Secret from [LINE Developers](developers.line.me)
 	- LINE\_CALLBACK\_URL = Your Callback URL which registered at [LINE Developers](developers.line.me)
 	- BUILDPACK_URL = `https://github.com/heroku/heroku-buildpack-php`
-	- APP_KEY = `base64:ec113l4Jsy+O7ffvyTri/7Ekw6a1UhXeDe6N7PiDXhQ=`
+	- APP_KEY
+		- `$ php artisan key: generate`
+		- copy and paste your key, start from **base64:**
 	
