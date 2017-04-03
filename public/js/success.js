@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
   $("#verify").on("click", function(){
-    get("../api/verify").done(function(data) {
+    get("/api/verify").done(function(data) {
       if(data) {
         alert("Access Token is VALID");
       } else {
@@ -11,7 +11,7 @@ $(document).ready(function() {
   });
 
   $("#refreshToken").on("click", function(){
-    get("../api/refreshToken").done(function(data) {
+    get("/api/refreshToken").done(function(data) {
       if(data) {
         alert("Access Token has been refreshed");
       } else {
@@ -21,7 +21,7 @@ $(document).ready(function() {
   });
 
   $("#revoke").on("click", function(){
-    get("../api/revoke").done(function(data) {
+    get("/api/revoke").done(function(data) {
       alert("Access Token has been revoked");
     });
   });
@@ -31,8 +31,13 @@ $(document).ready(function() {
 
 var get = function(url) {
   var def = jQuery.Deferred();
+  $.ajaxSetup({
+    headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    }
+  });
   jQuery.ajax({
-    type: 'GET',
+    type: 'POST',
     url: url,
     success: function(value) {
       def.resolve(value);

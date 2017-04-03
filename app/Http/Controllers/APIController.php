@@ -10,7 +10,6 @@ use App\Infra\Line\API\v2\LineAPIService;
 class APIController extends Controller
 {
     public function refreshToken(Request $request){
-      Log::debug('refreshToken start');
       $token = self::getRefreshToken($request);
       $lineAPIService = new LineAPIService;
       $newAccessToken = new AccessToken($lineAPIService->refreshToken($token));
