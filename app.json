@@ -1,0 +1,19 @@
+{
+  "name": "LINE Login starter",
+  "description": "Sample Application for LINE Login",
+  "repository": "https://github.com/jedidiahwahana/line-login-laravel",
+  "env": {
+    "LINE_CHANNEL_ID": {
+      "description": "Channel ID",
+      "required": true
+    },
+    "LINE_CHANNEL_SECRET": {
+      "description": "Channel secret",
+      "required": true
+    },
+    "LINE_CALLBACK_URL": {
+      "description": "Callback URL",
+      "required": true
+    }
+  }
+}
