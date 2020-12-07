@@ -21,7 +21,7 @@ class Client
     curl_setopt($ch,CURLOPT_URL,$url);
     curl_setopt($ch,CURLOPT_RETURNTRANSFER,true);
     curl_setopt($ch,CURLOPT_HEADER, $header);
-    curl_setopt($ch, CURLOPT_POST, count($postData));
+    //curl_setopt($ch, CURLOPT_POST, count($postData)); BUG error count($postData)
     curl_setopt($ch, CURLOPT_POSTFIELDS, $postData);
 
     $output=curl_exec($ch);
